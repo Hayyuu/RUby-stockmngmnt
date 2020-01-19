@@ -1,0 +1,7 @@
+<h4>Add Product to Stock</h4>
+<%= form_for @product,url:{action:'create'} do |f| %>
+    <%= render partial: "product/form", :locals=>{:f=>f}%>
+    <p>
+        <%= f.submit("Create") %>
+    </p>
+<% end %>    

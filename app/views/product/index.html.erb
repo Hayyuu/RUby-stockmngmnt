@@ -1,0 +1,21 @@
+<%= link_to "click to add new product",{controller: "product",action: "new"} %>
+<table border="1" width="70%" cellpadding="0" cellspacing="0">
+<thead>
+<th>Product name</th>
+<th>Product code</th>
+<th>Product status</th>
+<th COLSPAN="2">Action</th>
+</thead>
+<tbody>
+    <% @product.each do |p| %>
+    <tr>
+        <td><%= p.Pname %></td>
+        <td><%= p.Pcode %></td>
+        <td><%= p.Pstatus %></td>
+        <td><%= link_to "Edit",edit_product_path(p.id) %></td>
+        <td><%= link_to "Delete",product_path(p.id),method: :delete,:data => {:confirm =>"do you want to delete?"} %></td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+
